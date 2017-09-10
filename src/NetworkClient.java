@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class TicTacToeClient {
+public class NetworkClient {
 
     private JFrame frame = new JFrame("Tic Tac Toe");
     private JLabel messageLabel = new JLabel("");
@@ -30,7 +30,7 @@ public class TicTacToeClient {
 
     // Constructs the client by connecting to a server, laying out the GUI and registering GUI listeners.
   
-    public TicTacToeClient(String serverAddress) throws Exception {
+    public NetworkClient(String serverAddress) throws Exception {
 
         // Setup networking
         socket = new Socket(serverAddress, PORT);
@@ -132,7 +132,7 @@ public class TicTacToeClient {
     public static void main(String[] args) throws Exception {
         while (true) {
             String serverAddress = (args.length == 0) ? "localhost" : args[1];
-            TicTacToeClient client = new TicTacToeClient(serverAddress);
+            NetworkClient client = new NetworkClient(serverAddress);
             client.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             client.frame.setSize(800, 600);
             client.frame.setVisible(true);
