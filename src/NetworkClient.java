@@ -69,8 +69,8 @@ public class NetworkClient {
             response = in.readLine();
             if (response.startsWith("WELCOME")) {
                 char mark = response.charAt(8);
-                icon = new ImageIcon(mark == 'X' ? "x.gif" : "o.gif");
-                opponentIcon  = new ImageIcon(mark == 'X' ? "o.gif" : "x.gif");
+                icon = new ImageIcon(mark == 'X' ? "Media/x.gif" : "Media/o.gif");
+                opponentIcon  = new ImageIcon(mark == 'X' ? "Media/o.gif" : "Media/x.gif");
                 frame.setTitle("Tic Tac Toe - Player " + mark);
             }
             while (true) {
